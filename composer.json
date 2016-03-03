@@ -1,0 +1,27 @@
+{
+    "name": "backfront/umbrella",
+    "description": "Plugin modular para wordpress",
+    "homepage": "http://githuub.com/backfront/umbrella/wiki",
+    "keywords": [
+        "plugin",
+        "wordpress",
+        "modular"
+    ],
+    "authors": [
+        {
+            "name": "Douglas Alves",
+            "email": "alves.douglaz@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.24",
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Umbrella\\": "src/Umbrella/",
+            "Controllers\\" : "src/App/Controllers/"
+        },
+        "classmap": ["src/Odin/classes"]
+    }
+}
