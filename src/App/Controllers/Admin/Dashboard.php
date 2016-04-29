@@ -15,8 +15,12 @@ namespace Controllers\Admin {
         function __construct($template_system) {
             $this->template_sys = $template_system;
         }
-
+        
+        //Controllers
         public function initDashboard($odin_add_menu) {
+            
+            new \Umbrella\Exception(E_USER_DEPRECATED);
+            
             add_action('admin_menu', function() use ($odin_add_menu) {
                 return $this->add_menu($odin_add_menu);
             });

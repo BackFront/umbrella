@@ -5,7 +5,7 @@ $atl = require_once 'vendor/autoload.php';
 //$atl->add('App\\Controllers\\', 'src/App/Controllers');
 
 
-define('UMB_VERSION', '1.0.0');
+//define('UMB_VERSION', '1.0.0');
 define('UMB_PLUGIN', __FILE__);
 define('UMB_PLUGIN_BASENAME', plugin_basename(UMB_PLUGIN));
 define('UMB_PLUGIN_NAME', trim(dirname(UMB_PLUGIN_BASENAME), '/'));
