@@ -22,6 +22,7 @@ if (!function_exists('umb_enqueues_register')):
 
         //Scripts
         wp_enqueue_script("grid_system", UMB_PLUGIN_URI . '/' . UMB_PLUGIN_NAME . '/assets/libs/semantic_ui/semantic.min.js');
+        wp_enqueue_script("controller_dashboard", UMB_PLUGIN_URI . '/' . UMB_PLUGIN_NAME . '/assets/js/admin/dashboard.js');
     }
 
     add_action('admin_enqueue_scripts', 'umb_register_admin_enqueues');

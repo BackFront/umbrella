@@ -1,7 +1,17 @@
-body {
-    background: #F1F1F1;
+body { background: #F1F1F1; }
+.umb.debug > * { border: 1px solid; }
+.umb.umb-page { margin: 15px auto; }
+.umb.menu { padding-top: 0; }
+
+.umb.fill {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
 
-.umb.debug > * {
-    border: 1px solid;
-}
+.umb.mt-10 { margin-top: 10px; }
+.umb.mt-15 { margin-top: 15px; }
+.umb.mt-20 { margin-top: 20px; }
+.umb.mt-25 { margin-top: 25px; }
+.umb.mt-30 { margin-top: 30px; }
