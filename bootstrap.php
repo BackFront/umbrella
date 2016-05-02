@@ -13,9 +13,11 @@ define('UMB_PLUGIN_DIR', untrailingslashit(dirname(UMB_PLUGIN)));
 define('UMB_PLUGIN_MODULES_DIR', UMB_PLUGIN_DIR . '/modules');
 
 use Umbrella\Umbrella;
+use Umbrella\Exception;
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/src/App/Views');
 $twig = new Twig_Environment($loader);
 $app = new Umbrella(UMB_PLUGIN_MODULES_DIR, $twig);
+$umb_messages = new Exception();
 
 //echo $twig->render('dashboard.phtml', array('text' => 'Hello world!'));

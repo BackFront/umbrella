@@ -36,6 +36,7 @@ class Exception {
     public function __construct($type = null) {
         $this->type = $type;
         set_error_handler(array($this, 'buildExceptionMessage'));
+        echo "ola";
     }
     
 

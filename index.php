@@ -26,4 +26,6 @@ function load_modules() {
 
 add_action('plugins_loaded', 'load_modules');
 
+
+
 $app->controller('Controllers\Admin\Dashboard')->initDashboard(new \Odin_Add_Menu());

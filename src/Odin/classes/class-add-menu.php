@@ -35,9 +35,10 @@ class Odin_Add_Menu {
      */
     public function __construct() {
         // Actions.
-        add_action('admin_menu', array(&$this, 'add_menu'));
+        
         add_action('admin_init', array(&$this, 'create_settings'));
         add_action('admin_enqueue_scripts', array(&$this, 'scripts'));
+        #add_action('admin_menu', array(&$this, 'add_menu'));
     }
 
     /**
