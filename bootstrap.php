@@ -11,6 +11,7 @@ define('UMB_PLUGIN_DIR', untrailingslashit(dirname(UMB_PLUGIN)));
 define('UMB_PLUGIN_URI', plugins_url());
 define('UMB_PLUGIN_MODULES_DIR', UMB_PLUGIN_DIR . '/modules');
 
+
 //Enquewes
 if (!function_exists('umb_enqueues_register')):
 
@@ -22,6 +23,7 @@ if (!function_exists('umb_enqueues_register')):
 
         //Scripts
         wp_enqueue_script("grid_system", UMB_PLUGIN_URI . '/' . UMB_PLUGIN_NAME . '/assets/libs/semantic_ui/semantic.min.js');
+        wp_enqueue_script("plug_exception", UMB_PLUGIN_URI . '/' . UMB_PLUGIN_NAME . '/assets/js/exception.js');
         wp_enqueue_script("controller_dashboard", UMB_PLUGIN_URI . '/' . UMB_PLUGIN_NAME . '/assets/js/admin/dashboard.js');
     }
 
@@ -34,12 +36,12 @@ endif;
 //
 //
 
-use Umbrella\Umbrella;
 use Umbrella\Exception;
+use Umbrella\Umbrella;
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/src/App/Views');
 $twig = new Twig_Environment($loader);
-$app = new Umbrella(UMB_PLUGIN_MODULES_DIR, $twig);
 $umb_messages = new Exception();
+$app = new Umbrella(UMB_PLUGIN_MODULES_DIR, $twig);
 
-//echo $twig->render('dashboard.phtml', array('text' => 'Hello world!'));
+echo $twig->render('local_error.twig', array('exception' => ''));

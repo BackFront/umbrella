@@ -21,11 +21,10 @@ require_once('bootstrap.php');
 
 function load_modules() {
     global $app;
-    $app->load_module('teste');
+    $app->load_module('este');
 }
 
 add_action('plugins_loaded', 'load_modules');
 
-
-
 $app->controller('Controllers\Admin\Dashboard')->initDashboard(new \Odin_Add_Menu());
+

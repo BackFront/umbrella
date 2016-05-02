@@ -1,6 +1,7 @@
 body { background: #F1F1F1; }
 .umb.debug > * { border: 1px solid; }
 .umb.umb-page { margin: 15px auto; }
+.umb.umb-page-content { background: #fff; padding: 20px 0 !important; }
 .umb.menu { padding-top: 0; }
 
 .umb.fill {
@@ -15,3 +16,14 @@ body { background: #F1F1F1; }
 .umb.mt-20 { margin-top: 20px; }
 .umb.mt-25 { margin-top: 25px; }
 .umb.mt-30 { margin-top: 30px; }
+
+.umb.local_error {
+    padding: 30px;
+    position: fixed;
+    min-width: 400px;
+    height: auto;
+    right: 0;
+    bottom: 10px;
+    z-index: 1000;
+}
+.umb.umb-exception { z-index: 1009; }

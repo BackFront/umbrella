@@ -20,7 +20,7 @@ namespace Umbrella {
             $dir = $this->module_dir;
 
             if (empty($dir) || !is_dir($dir)) {
-                echo "Erro ao incluir o Modulo: #{$mod} - no diretorio: {$dir}";
+                trigger_error("Erro ao incluir o Modulo: #{$mod}", E_USER_WARNING);
                 return false;
             }
 
@@ -29,7 +29,8 @@ namespace Umbrella {
             if (file_exists($file)) {
                 include_once $file;
             } else {
-                echo "Erro ao incluir o Modulo: #{$mod} - no diretorio: {$dir}";
+                trigger_error("Erro ao incluir o Modulo: #{$mod}", E_USER_WARNING);
+                Exception::person(UMB_USER_SUCCESS, "Olá mundo");
                 return false;
             }
         }
