@@ -21,7 +21,7 @@ require_once('bootstrap.php');
 
 function load_modules() {
     global $app;
-    $app->load_module('este');
+    $app->load_module('teste');
 }
 
 add_action('plugins_loaded', 'load_modules');

@@ -30,7 +30,6 @@ namespace Umbrella {
                 include_once $file;
             } else {
                 trigger_error("Erro ao incluir o Modulo: #{$mod}", E_USER_WARNING);
-                Exception::person(UMB_USER_SUCCESS, "Olá mundo");
                 return false;
             }
         }

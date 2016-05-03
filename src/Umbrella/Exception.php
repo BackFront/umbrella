@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package Umbrella 
  * @subpackage Umbrella Modular Plugin
@@ -36,6 +35,7 @@ namespace Umbrella {
             define('UMB_USER_SUCCESS', 200);
             $this->type = $type;
             set_error_handler(array(&$this, 'buildExceptionMessage'));
+            echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>';
         }
 
         public function buildExceptionMessage($excNo, $excMsg, $excFile, $excLine, $excContext) {
@@ -65,11 +65,16 @@ namespace Umbrella {
             $html .= '<div class="header">' . $excMsg . '</div>';
             $html .= '<p>' . $excFile . ':' . $excLine . '</p>';
             $html .= '</div>';
-            echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>';
-
-            echo '<script>exc("#umb_local_error"';
-            echo $html;
-            echo ')</script>';
+            ?>
+            <script>
+                $('#umb_local_error').append('<?php echo $html; ?>');
+            </script>
+            <?php
+            if ($excNo == E_USER_ERROR):
+                die;
+            else:
+                null;
+            endif;
         }
 
         public static function person($excNo, $excMsg, $excFile = null, $excLine = null) {
@@ -96,7 +101,11 @@ namespace Umbrella {
             $html .= '<div class="header">' . $excMsg . '</div>';
             $html .= '<p>' . $excFile . $excLine . '</p>';
             $html .= '</div>';
-            echo $html;
+            ?>
+            <script>
+                $('#umb_local_error').append('<?php echo $html; ?>');
+            </script>
+            <?php
         }
 
     }

@@ -18,12 +18,11 @@ body { background: #F1F1F1; }
 .umb.mt-30 { margin-top: 30px; }
 
 .umb.local_error {
-    padding: 30px;
     position: fixed;
     min-width: 400px;
     height: auto;
     right: 0;
-    bottom: 10px;
+    bottom: 30px;
     z-index: 1000;
 }
-.umb.umb-exception { z-index: 1009; }
+.umb.umb-exception { z-index: 1009; margin: 30px; }
