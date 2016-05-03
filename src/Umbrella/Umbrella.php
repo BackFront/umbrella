@@ -34,6 +34,14 @@ namespace Umbrella {
             }
         }
 
+        public function load_dashboard() {
+            if (get_option('umb_auth')) {
+                $this->controller('Controllers\Admin\Dashboard')->initDashboard(new \Odin_Add_Menu()); /* initialize dashboard */
+            } else {
+                $this->controller('Controllers\Admin\Dashboard')->authScreen(new \Odin_Add_Menu()); /* initialize authentication */
+            }
+        }
+
         public function controller($Controller) {
             return new $Controller($this->template_system);
         }
