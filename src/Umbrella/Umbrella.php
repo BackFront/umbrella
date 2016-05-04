@@ -9,6 +9,7 @@ namespace Umbrella {
 
         private $module_dir;
         private $template_system;
+        private $umb_auth;
 
         public function __construct($module_dir, $template_system = null)
         {
@@ -37,15 +38,47 @@ namespace Umbrella {
         }
 
 
-        public function load_admin_menu($menuContext = null)
-        {
-            $this->controller('Controllers\Admin\Dashboard')->controller_loadAdminMenu(new \Odin_Add_Menu());
-        }
-
-
         public function controller($Controller)
         {
             return new $Controller($this->template_system);
+        }
+
+
+        public function remoteAppVerification($umb_auth)
+        {
+            $usr = $umb_auth['user'];
+            $psw = $umb_auth['pass'];
+        }
+
+
+        private function localAppAuthentication()
+        {
+            
+        }
+
+
+        private function remoteAppAuthentication()
+        {
+            $this->umb_auth['app_id'] = "ac897e4ff84cf874dfa64fa6ecfb";
+            $this->umb_auth['app_secret'] = "74dfa64fa6ecfbac897e4ff84cf874dfa64fa6ecfb";
+            $this->umb_auth['token'] = "74dfa64fa6ecfbac897e4ff84cf874dfa64fa6ecfb";
+            $this->umb_auth['id'] = 0000;
+            $this->umb_auth['user_name'] = "nome";
+            $this->umb_auth['user_email'] = "email@domain.com";
+            $this->umb_auth['modules'] = array(
+                [
+                    'id' => 001,
+                    'name' => "teste",
+                    'get_link' => "https://module.umbrella.tk/?get=3cb18a6f51d5acf0ed",
+                    'cover' => "https://module.umbrella.tk/?cover=3cb18a6f51d5acf0ed",
+                ],
+                [
+                    'id' => 002,
+                    'name' => "teste2",
+                    'get_link' => "https://module.umbrella.tk/?get=3cb18a6f51d5acf0ed",
+                    'cover' => "https://module.umbrella.tk/?cover=3cb18a6f51d5acf0ed",
+                ],
+            );
         }
 
 

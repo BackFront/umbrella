@@ -32,7 +32,7 @@ add_action('plugins_loaded', 'load_modules'); /* calls modules */
 function init_plugin()
 {
     global $app;
-    $app->load_admin_menu();
+    $app->controller('Controllers\Admin\Dashboard')->controller_loadAdminMenu(new \Odin_Add_Menu(), $app);
 }
 
 
