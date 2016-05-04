@@ -21,23 +21,19 @@ register_activation_hook(__FILE__, 'install'); /* It's run when the installation
 register_deactivation_hook(__FILE__, 'uninstall'); /* It's run when the uninstall is running */
 
 require_once('bootstrap.php'); //Config File
-
-function load_modules() {
+function load_modules()
+{
     global $app;
     $app->load_module('teste');
 }
+
+
 add_action('plugins_loaded', 'load_modules'); /* calls modules */
-
-function init_plugin() {
+function init_plugin()
+{
     global $app;
-    $app->load_dashboard();
-    Umbrella\Exception::person(E_USER_NOTICE, get_option('umb_auth'));
+    $app->load_admin_menu();
 }
+
+
 add_action('plugins_loaded', 'init_plugin'); /* calls modules */
-
-
-//if():
-//    
-//else:
-//    
-//endif;
