@@ -10,10 +10,12 @@ namespace Controllers\Admin {
     {
 
         private $template_sys;
+        private $application_object;
 
-        function __construct($template_system)
+        function __construct($template_system, $app_object = null)
         {
             $this->template_sys = $template_system;
+            $this->application_object = $app_object;
         }
 
 
