@@ -1,24 +1,30 @@
-<div class="umb umb-page">
-    <div class="ui container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="ui menu pointing umb">
-                    <div class="header item">
-                        Umbrella
-                    </div>
-                    <a class="item active">
-                        Dashboard
-                    </a>
-                    <a class="item">
-                        Configurações
-                    </a>
-                    <div class="right menu umb">
-                        <a class="item">Logar</a>
-                    </div>
-                </div>
+<div class="ui segment row umb mt-20">
+    <div class="col-md-3">
+        <div class="ui vertical fluid tabular umb menu" id="umb_nav_dashboard">
+            <a class="item active" data-tab="modules">
+                Meus módulos
+                <div class="ui label">33</div>
+            </a>
+            <a class="item" data-tab="installed">
+                Módulos instalados
+                <div class="ui label">12</div>
+            </a>
+            <a class="item" data-tab="config">
+                Configurações
+            </a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="ui segment">
+            <div class="ui tab active" data-tab="modules">
+                Meus modulos
+            </div>
+            <div class="ui tab" data-tab="installed">
+                Instalados    
+            </div>
+            <div class="ui tab" data-tab="config">
+                Configurações
             </div>
         </div>
-        {% block auth_dashboard %}
-        {% endblock %}
     </div>
 </div>

@@ -43,7 +43,7 @@ namespace Controllers\Admin {
         {
             global $twig;
             echo $this->template_sys->render('dashboard.twig', array(
-                'plugin_is_auth' => true
+                'plugin_is_auth' => false
                     )
             );
         }
