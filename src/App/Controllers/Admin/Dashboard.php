@@ -43,7 +43,8 @@ namespace Controllers\Admin {
         {
             global $twig;
             echo $this->template_sys->render('dashboard.twig', array(
-                'plugin_is_auth' => false
+                'plugin_is_auth' => false,
+                'template_dir' => UMB_PLUGIN_URI . DIRECTORY_SEPARATOR . UMB_PLUGIN_NAME
                     )
             );
         }

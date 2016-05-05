@@ -1,28 +1,10 @@
 <div class="umb umb-page">
     <div class="ui container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="ui menu pointing umb">
-                    <div class="header item">
-                        Umbrella
-                    </div>
-                    <a class="item active">
-                        Dashboard
-                    </a>
-                    <a class="item">
-                        Configurações
-                    </a>
-                    <div class="right menu umb">
-                        <a class="item">Logar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         {% if plugin_is_auth == true %}
-            {% include 'block/auth_dashboard.twig' %}
+            {% include 'block/main_nav.twig' %}
+            {% include 'block/main_dashboard.twig' %}
         {% elseif plugin_is_auth == false %}
             {% include 'block/noauth_dashboard.twig' %}
         {% endif %}
-
     </div>
 </div>
