@@ -3,6 +3,7 @@
  * @author Douglas Alves <alves.douglaz@gmail.com>
  */
 namespace Umbrella {
+    use Umbrella\Module\ModuleGetCurl;
 
     class Umbrella
     {
